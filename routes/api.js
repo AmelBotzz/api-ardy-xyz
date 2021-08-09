@@ -2637,6 +2637,26 @@ router.get('/playstore', async (req, res, next) => {
 })
 })
 
+router.get('/playstore', async (req, res, next) => {
+        var apikeyInput = req.query.apikey
+            
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'freeapi') return res.json(loghandler.invalidKey)
+
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/others/listheroml?apikey=tvT241pY5rPDYQW`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+             	author: 'Hafidz Abdillah',
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+})
+
 
 router.get('/maker', async (req, res, next) => {
         var apikeyInput = req.query.apikey,
