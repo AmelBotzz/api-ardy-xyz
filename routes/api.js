@@ -471,7 +471,7 @@ router.get('/nulis', async (req, res, next) => {
 	if(apikeyInput != 'freeapi') return res.json(loghandler.invalidKey)
     if (!text) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter text"})
 
-       fetch(encodeURI(`http://salism3.pythonanywhere.com/write/?text=${text}`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/maker/nulis?text=${text}&apikey=tvT241pY5rPDYQW`))
         .then(response => response.json())
         .then(data => {
         var result = data;
