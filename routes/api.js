@@ -2637,7 +2637,7 @@ router.get('/playstore', async (req, res, next) => {
 })
 })
 
-router.get('/playstore', async (req, res, next) => {
+router.get('/heroml', async (req, res, next) => {
         var apikeyInput = req.query.apikey
             
 	if(!apikeyInput) return res.json(loghandler.notparam)
