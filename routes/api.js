@@ -1540,7 +1540,7 @@ router.get('/holoh', async (req, res, next) => {
 })
 })
 
-router.get('/holoh', async (req, res, next) => {
+router.get('/heleh', async (req, res, next) => {
         var apikeyInput = req.query.apikey,
             kata = req.query.kata
             
