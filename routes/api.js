@@ -8,7 +8,7 @@ var zahirr = db.get("zahirr");
 	console.log('')
 }
 
-var creatorList = ['@freeapi','@Hafidz Abdillah'];
+var creatorList = ['Hafidz','Hafidz Abdillah'];
 var creator = creatorList[Math.floor(Math.random() * creatorList.length)];
 
 
@@ -215,7 +215,7 @@ router.get('/addapikey', (req, res, next) => {
         status = req.query.status,
         apikeyInput  = req.query.apikeyInput,
         email = req.query.email,
-        nomorhp = req.query.nomorhp
+        nomorhp = req.qucery.nomorhp
         name = req.query.name,
         age = req.query.age,
         country = req.query.country;
@@ -2601,6 +2601,27 @@ router.get('/ig', async (req, res, next) => {
     if (!username) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter username"})
 
        fetch(encodeURI(`https://python-api-zhirrr.herokuapp.com/api/stalk?username=${username}`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+             	author: 'Hafidz Abdillah',
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+
+})router.get('/playstore', async (req, res, next) => {
+        var apikeyInput = req.query.apikey,
+            search = req.query.search
+            
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'freeapi') return res.json(loghandler.invalidKey)
+    if (!search) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter search"})
+
+       fetch(encodeURI(`https://api-gplay.azharimm.tk/apps?q=${search}`))
         .then(response => response.json())
         .then(data => {
         var result = data;
