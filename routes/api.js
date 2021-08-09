@@ -2613,7 +2613,9 @@ router.get('/ig', async (req, res, next) => {
          	res.json(loghandler.error)
 })
 
-})router.get('/playstore', async (req, res, next) => {
+})
+
+router.get('/playstore', async (req, res, next) => {
         var apikeyInput = req.query.apikey,
             search = req.query.search
             
