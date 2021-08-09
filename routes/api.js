@@ -2568,6 +2568,20 @@ router.get('/yutub/video', async (req, res, next) => {
 })
 })
 
+router.get('/asupan', async (req, res, next) => {
+        var apikeyInput = req.query.apikey,
+            
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'freeapi') return res.json(loghandler.invalidKey)
+
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/asupan/asupan?apikey=tvT241pY5rPDYQW`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+})
 
 router.get('/yutub/audio', async (req, res, next) => {
         var apikeyInput = req.query.apikey,
