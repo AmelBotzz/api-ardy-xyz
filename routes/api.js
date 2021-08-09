@@ -769,22 +769,24 @@ router.get('/kisahnabi', async (req, res, next) => {
 		})
 })
 
-router.get('/infogempa', async (req, res, next) => {
-	        var apikeyInput = req.query.apikey
+router.get('/gempa', async (req, res, next) => {
+        var apikeyInput = req.query.apikey,
+            
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'freeapi') return res.json(loghandler.invalidKey)
 
-		if (!apikeyInput) return res.json(loghandler.notparam)
-		if (apikeyInput != 'freeapi') return res.json(loghandler.invalidKey)
-		Gempa()
-		.then(result => {
-			res.json({
-				creator: creator,
-				result
-			})
-		})
-		.catch(e => {
-			console.log('Error :', color(e, 'red'))
-			res.json(loghandler.error)
-		})
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/others/infogempa?apikey=tvT241pY5rPDYQW`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+                 author: 'Hafidz Abdillah',
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
 })
 
 router.get('/hadits', async (req, res, next) => {
@@ -1668,17 +1670,18 @@ router.get('/kbbi', async (req, res, next) => {
 })
 
 
-router.get('/covidindo', async (req, res, next) => {
+router.get('/covid', async (req, res, next) => {
         var apikeyInput = req.query.apikey
             
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if(apikeyInput != 'freeapi') return res.json(loghandler.invalidKey)
 
-       fetch(encodeURI(`https://covid19-api-zhirrr.vercel.app/api/covid-indonesia`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/others/corona?negara=indonesia&apikey=tvT241pY5rPDYQW`))
         .then(response => response.json())
         .then(data => {
         var result = data;
              res.json({
+               author: 'Hafidz Abdillah',
                  result
              })
          })
