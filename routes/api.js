@@ -1477,6 +1477,27 @@ router.get('/tv', async (req, res, next) => {
 })
 })
 
+router.get('/fakedata', async (req, res, next) => {
+        var apikeyInput = req.query.apikey,
+            country = req.query.country
+            
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'freeapi') return res.json(loghandler.invalidKey)
+        if(!country) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter country"})
+
+       fetch(encodeURI(`https://fakename-api-zhirrr.vercel.app/api/fakename?country=${country}`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+})
+
 router.get('/coming', async (req, res, next) => {
         var apikeyInput = req.query.apikey
             
@@ -1485,6 +1506,27 @@ router.get('/coming', async (req, res, next) => {
 	if(apikeyInput != 'freeapi') return res.json(loghandler.invalidKey)
 
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/movie/comingsoon?apikey=tvT241pY5rPDYQW`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+               author: 'Hafidz Abdillah',
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+})
+
+router.get('/oskop', async (req, res, next) => {
+        var apikeyInput = req.query.apikey
+            
+            
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'freeapi') return res.json(loghandler.invalidKey)
+
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/movie/jadwalbioskop?apikey=tvT241pY5rPDYQW`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -1519,6 +1561,26 @@ router.get('/jadwalshalat', async (req, res, next) => {
 })
 })
 
+router.get('/styletext', async (req, res, next) => {
+        var apikeyInput = req.query.apikey,
+            text = req.query.text
+            
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'freeapi') return res.json(loghandler.invalidKey)
+        if(!text) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter text"})
+
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/others/styletext?text=${text}&apikey=tvT241pY5rPDYQW`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+})
 
 router.get('/fakedata', async (req, res, next) => {
         var apikeyInput = req.query.apikey,
