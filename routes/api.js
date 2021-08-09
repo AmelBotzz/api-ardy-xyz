@@ -770,7 +770,7 @@ router.get('/kisahnabi', async (req, res, next) => {
 })
 
 router.get('/gempa', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
+        var apikeyInput = req.query.apikey
             
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if(apikeyInput != 'freeapi') return res.json(loghandler.invalidKey)
@@ -1455,6 +1455,27 @@ router.get('/drakorasia', async (req, res, next) => {
 })
 })
 
+router.get('/tv', async (req, res, next) => {
+        var apikeyInput = req.query.apikey,
+            chanel = req.query.chanel
+            
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'freeapi') return res.json(loghandler.invalidKey)
+        if(!chanel) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter chanel"})
+
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/others/jadwaltv?channel=${chanel}&apikey=tvT241pY5rPDYQW`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+               author: 'Hafidz Abdillah',
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+})
 
 router.get('/jadwalshalat', async (req, res, next) => {
         var apikeyInput = req.query.apikey,
