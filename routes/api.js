@@ -1477,6 +1477,26 @@ router.get('/tv', async (req, res, next) => {
 })
 })
 
+router.get('/fakedata', async (req, res, next) => {
+        var apikeyInput = req.query.apikey
+            
+            
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'freeapi') return res.json(loghandler.invalidKey)
+
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/movie/comingsoon?apikey=tvT241pY5rPDYQW`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+})
+
 router.get('/jadwalshalat', async (req, res, next) => {
         var apikeyInput = req.query.apikey,
             kota = req.query.kota
