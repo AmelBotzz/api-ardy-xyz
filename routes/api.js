@@ -215,7 +215,7 @@ router.get('/addapikey', (req, res, next) => {
         status = req.query.status,
         apikeyInput  = req.query.apikeyInput,
         email = req.query.email,
-        nomorhp = req.qucery.nomorhp
+        nomorhp = req.query.nomorhp
         name = req.query.name,
         age = req.query.age,
         country = req.query.country;
@@ -776,6 +776,46 @@ router.get('/gempa', async (req, res, next) => {
 	if(apikeyInput != 'freeapi') return res.json(loghandler.invalidKey)
 
        fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/others/infogempa?apikey=tvT241pY5rPDYQW`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+                 author: 'Hafidz Abdillah',
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+})
+
+router.get('/lucu', async (req, res, next) => {
+        var apikeyInput = req.query.apikey
+            
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'freeapi') return res.json(loghandler.invalidKey)
+
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/quoteslucu?apikey=tvT241pY5rPDYQW`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+                 author: 'Hafidz Abdillah',
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+})
+
+router.get('/cerpen', async (req, res, next) => {
+        var apikeyInput = req.query.apikey
+            
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'freeapi') return res.json(loghandler.invalidKey)
+
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/cerpen?apikey=tvT241pY5rPDYQW`))
         .then(response => response.json())
         .then(data => {
         var result = data;
