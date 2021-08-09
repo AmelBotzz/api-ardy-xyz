@@ -1477,7 +1477,7 @@ router.get('/tv', async (req, res, next) => {
 })
 })
 
-router.get('/fakedata', async (req, res, next) => {
+router.get('/coming', async (req, res, next) => {
         var apikeyInput = req.query.apikey
             
             
@@ -1489,6 +1489,7 @@ router.get('/fakedata', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
+               author: 'Hafidz Abdillah',
                  result
              })
          })
