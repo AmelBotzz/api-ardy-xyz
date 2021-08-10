@@ -901,6 +901,44 @@ router.get('/fbdown', async (req, res, next) => {
 })
 
 
+router.get('/textmaker/metallic', async (req, res, next) => {
+        var theme = req.query.theme
+             text = req.query.text,
+             apikeyInput = req.query.apikey;
+        
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'freeapi') return res.json(loghandler.invalidKey)
+        if (!theme) return res.json(loghandler.nottheme)
+        if (theme != 'nulis') return res.json(loghandler.notheme)
+        if (!text) return res.json(loghandler.nottext)
+
+        if (theme == 'nulis') {
+            try {
+            request.post({
+                url: 'https://dapuhy-api.herokuapp.com/api/maker/nulis?text=${text}&apikey=tvT241pY5rPDYQW',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=6346fb5fe9b50aa3eb40e3c2f04ad3c9&image=${result}&name=${randomTextNumber}`))
+                                .then(response => response.json())
+                                .then(data => {
+                                    var urlnya = data.data.url,
+                                        delete_url = data.data.delete_url;
+                                        res.json({
+                                            status : true,
+                                            creator : `${creator}`,
+                                            message : `jangan lupa follow ${creator}`,
+                                            result:{
+                                                url:urlnya,
+                                                delete_url: delete_url,
+                                                info: 'url akan hilang setelah 2 menit'
+                                            }
+                                        })
+                                })
+                        })
+                    }
+                })
+                
 
 router.get('/textmaker/metallic', async (req, res, next) => {
         var theme = req.query.theme,
