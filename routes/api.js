@@ -2199,6 +2199,20 @@ router.get('/kbbi', async (req, res, next) => {
 })
 })
 
+router.get('/hitungmundur', async (req, res, next) => {
+
+       fetch(encodeURI(`https://xinzbot-api.herokuapp.com/api/hitungmundur?apikey=XinzBot&tanggal=12&bulan=4`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+})
 
 router.get('/covid', async (req, res, next) => {
         var apikeyInput = req.query.apikey
