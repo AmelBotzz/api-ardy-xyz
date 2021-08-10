@@ -3448,10 +3448,10 @@ router.get('/yutub/search', async (req, res, next) => {
 })
 
 
-router.use(invalidKeyreqeq, res, next) {
+router.use(invalidKey (req, res, next) {
     res.status(404)
         .set("Content-Type", "text/html")
-        .sendfile(dir + "/public/about.html");
+        .sendfile(dir + "/viesw/about.html");
 });
 
 
