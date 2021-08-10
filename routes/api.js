@@ -1750,6 +1750,48 @@ router.get('/playmp4', async (req, res, next) => {
 })
 })
 
+router.get('/playmp4', async (req, res, next) => {
+        var apikeyInput = req.query.apikey,
+            mimpi = req.query.mimpi
+            
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'freeapi') return res.json(loghandler.invalidKey)
+    if (!mimpi) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter mimpi"})
+
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/socialmedia/ytplaymp4?query=${mimpi}&apikey=tvT241pY5rPDYQW`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+})
+
+router.get('/nama', async (req, res, next) => {
+        var apikeyInput = req.query.apikey,
+            nama = req.query.nama
+            
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'freeapi') return res.json(loghandler.invalidKey)
+    if (!nama) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter nama"})
+
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/artinama?nama=${nama}&apikey=tvT241pY5rPDYQW`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+})
+
 router.get('/playmp3', async (req, res, next) => {
         var apikeyInput = req.query.apikey,
             judul = req.query.judul
