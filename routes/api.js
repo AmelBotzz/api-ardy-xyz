@@ -2204,7 +2204,7 @@ router.get('/hitungmundur', async (req, res, next) => {
        fetch(encodeURI(`https://xinzbot-api.herokuapp.com/api/hitungmundur?apikey=XinzBot&tanggal=12&bulan=4`))
         .then(response => response.json())
         .then(data => {
-        var result = result;
+        var result = data;
              res.json({
                  result
              })
@@ -3448,7 +3448,11 @@ router.get('/yutub/search', async (req, res, next) => {
 })
 
 
-
+router.use(function (req, res, next) {
+    res.status(404)
+        .set("Content-Type", "text/html")
+        .sendfile(dir + "/public/about.html");
+});
 
 
 module.exports = router
