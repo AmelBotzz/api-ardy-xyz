@@ -1769,6 +1769,27 @@ router.get('/famely', async (req, res, next) => {
 })
 })
 
+router.get('/playmp4', async (req, res, next) => {
+        var apikeyInput = req.query.apikey,
+            kata = req.query.kata
+            
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'freeapi') return res.json(loghandler.invalidKey)
+    if (!kata) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter kata"})
+
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/jagokata?query=${kata}&apikey=tvT241pY5rPDYQW`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+})
+
 router.get('/lontong', async (req, res, next) => {
         var apikeyInput = req.query.apikey
             
