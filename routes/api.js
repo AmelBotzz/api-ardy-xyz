@@ -2036,6 +2036,26 @@ router.get('/anime/kusonime', async (req, res, next) => {
 })
 })
 
+router.get('/anime/listnom', async (req, res, next) => {
+        var apikeyInput = req.query.apikey,
+	    nomor = req.query.nomor
+            
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'freeapi') return res.json(loghandler.invalidKey)
+	if(!nomor) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter nomor"})
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/anime/mal-nomer?nomer=${nomor}&apikey=tvT241pY5rPDYQW`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+})
+
 router.get('/anime/nameanime', async (req, res, next) => {
         var apikeyInput = req.query.apikey,
 	      search = req.query.search
