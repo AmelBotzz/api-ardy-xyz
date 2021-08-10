@@ -1758,7 +1758,7 @@ router.get('/mimpi', async (req, res, next) => {
 	if(apikeyInput != 'freeapi') return res.json(loghandler.invalidKey)
     if (!mimpi) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter mimpi"})
 
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/socialmedia/ytplaymp4?query=${mimpi}&apikey=tvT241pY5rPDYQW`))
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/artimimpi?mimpi=${mimpi}&apikey=tvT241pY5rPDYQW`))
         .then(response => response.json())
         .then(data => {
         var result = data;
