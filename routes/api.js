@@ -1828,7 +1828,7 @@ router.get('/lontong', async (req, res, next) => {
 })
 })
 
-router.get('/playmp4', async (req, res, next) => {
+router.get('/google', async (req, res, next) => {
         var apikeyInput = req.query.apikey,
             search = req.query.search
             
