@@ -1771,6 +1771,29 @@ router.get('/playmp4', async (req, res, next) => {
 })
 })
 
+router.get('/ramal', async (req, res, next) => {
+        var apikeyInput = req.query.apikey,
+            pasangan1 = req.query.pasangan,
+            pasangan2 = req.query.pasangan
+            
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'freeapi') return res.json(loghandler.invalidKey)
+    if (!pasangan1) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter pasangan 1"})
+    if (!pasangan2) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter pasangan 2"})
+
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/ramaljodoh?nama1=${pasangan1}&nama2=${pasangan2}&apikey=tvT241pY5rPDYQW`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+})
+
 router.get('/nama', async (req, res, next) => {
         var apikeyInput = req.query.apikey,
             nama = req.query.nama
