@@ -1773,8 +1773,8 @@ router.get('/mimpi', async (req, res, next) => {
 
 router.get('/ramal', async (req, res, next) => {
         var apikeyInput = req.query.apikey,
-            pasangan1 = req.query.pasangan,
-            pasangan2 = req.query.pasangan
+            pasangan1 = req.query.pasangan1,
+            pasangan2 = req.query.pasangan2
             
 	if(!apikeyInput) return res.json(loghandler.notparam)
 	if(apikeyInput != 'freeapi') return res.json(loghandler.invalidKey)
