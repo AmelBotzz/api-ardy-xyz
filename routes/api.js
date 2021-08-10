@@ -514,7 +514,7 @@ router.get('/textmaker', async (req, res, next) => {
                         $(".thumbnail").find("img").each(function() {
                             h = $(this).attr("src")
                             var result = "https://photooxy.com/"+h
-                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=93f5c8966cfaf3ca19051ee9f85c14f3&image=${result}&name=${randomTextNumber}`))
+                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=6346fb5fe9b50aa3eb40e3c2f04ad3c9&image=${result}&name=${randomTextNumber}`))
                                 .then(response => response.json())
                                 .then(data => {
                                     var urlnya = data.data.url,
@@ -552,7 +552,7 @@ router.get('/textmaker', async (req, res, next) => {
                         $(".thumbnail").find("img").each(function() {
                             h = $(this).attr("src")
                             var result = "https://photooxy.com/"+h
-                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=761ea2d5575581057a799d14e9c78e28&image=${result}&name=${randomTextNumber}`))
+                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=6346fb5fe9b50aa3eb40e3c2f04ad3c9&image=${result}&name=${randomTextNumber}`))
                                 .then(response => response.json())
                                 .then(data => {
                                     var urlnya = data.data.url,
@@ -604,7 +604,7 @@ router.get('/textmaker/game', async (req, res, next) => {
                         $(".thumbnail").find("img").each(function() {
                             h = $(this).attr("src")
                             var result = "https://photooxy.com/"+h
-                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=761ea2d5575581057a799d14e9c78e28&image=${result}&name=${randomTextNumber}`))
+                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=6346fb5fe9b50aa3eb40e3c2f04ad3c9&image=${result}&name=${randomTextNumber}`))
                                 .then(response => response.json())
                                 .then(data => {
                                     var urlnya = data.data.url,
@@ -641,7 +641,7 @@ router.get('/textmaker/game', async (req, res, next) => {
                         $(".thumbnail").find("img").each(function() {
                             h = $(this).attr("src")
                             var result = "https://photooxy.com/"+h
-                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=761ea2d5575581057a799d14e9c78e28&image=${result}&name=${randomTextNumber}`))
+                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=6346fb5fe9b50aa3eb40e3c2f04ad3c9&image=${result}&name=${randomTextNumber}`))
                                 .then(response => response.json())
                                 .then(data => {
                                     var urlnya = data.data.url,
@@ -692,7 +692,7 @@ router.get('/textmaker/senja', async (req, res, next) => {
                         $(".thumbnail").find("img").each(function() {
                             h = $(this).attr("src")
                             var result = "https://photooxy.com/"+h
-                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=761ea2d5575581057a799d14e9c78e28&image=${result}&name=${randomTextNumber}`))
+                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=6346fb5fe9b50aa3eb40e3c2f04ad3c9&image=${result}&name=${randomTextNumber}`))
                                 .then(response => response.json())
                                 .then(data => {
                                     var urlnya = data.data.url,
@@ -728,7 +728,7 @@ router.get('/textmaker/senja', async (req, res, next) => {
                         $(".thumbnail").find("img").each(function() {
                             h = $(this).attr("src")
                             var result = "https://photooxy.com/"+h
-                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=761ea2d5575581057a799d14e9c78e28&image=${result}&name=${randomTextNumber}`))
+                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=6346fb5fe9b50aa3eb40e3c2f04ad3c9&image=${result}&name=${randomTextNumber}`))
                                 .then(response => response.json())
                                 .then(data => {
                                     var urlnya = data.data.url,
@@ -929,7 +929,7 @@ router.get('/textmaker/metallic', async (req, res, next) => {
                         $(".thumbnail").find("img").each(function() {
                             h = $(this).attr("src")
                             var result = "https://photooxy.com/"+h
-                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=761ea2d5575581057a799d14e9c78e28&image=${result}&name=${randomTextNumber}`))
+                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=6346fb5fe9b50aa3eb40e3c2f04ad3c9&image=${result}&name=${randomTextNumber}`))
                                 .then(response => response.json())
                                 .then(data => {
                                     var urlnya = data.data.url,
@@ -965,7 +965,7 @@ router.get('/textmaker/metallic', async (req, res, next) => {
                         $(".thumbnail").find("img").each(function() {
                             h = $(this).attr("src")
                             var result = "https://photooxy.com/"+h
-                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=761ea2d5575581057a799d14e9c78e28&image=${result}&name=${randomTextNumber}`))
+                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=6346fb5fe9b50aa3eb40e3c2f04ad3c9&image=${result}&name=${randomTextNumber}`))
                                 .then(response => response.json())
                                 .then(data => {
                                     var urlnya = data.data.url,
@@ -1016,7 +1016,7 @@ router.get('/textmaker/alam', async (req, res, next) => {
                         $(".thumbnail").find("img").each(function() {
                             h = $(this).attr("src")
                             var result = "https://photooxy.com/"+h
-                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=761ea2d5575581057a799d14e9c78e28&image=${result}&name=${randomTextNumber}`))
+                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=6346fb5fe9b50aa3eb40e3c2f04ad3c9&image=${result}&name=${randomTextNumber}`))
                                 .then(response => response.json())
                                 .then(data => {
                                     var urlnya = data.data.url,
@@ -1052,7 +1052,7 @@ router.get('/textmaker/alam', async (req, res, next) => {
                         $(".thumbnail").find("img").each(function() {
                             h = $(this).attr("src")
                             var result = "https://photooxy.com/"+h
-                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=761ea2d5575581057a799d14e9c78e28&image=${result}&name=${randomTextNumber}`))
+                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=6346fb5fe9b50aa3eb40e3c2f04ad3c9&image=${result}&name=${randomTextNumber}`))
                                 .then(response => response.json())
                                 .then(data => {
                                     var urlnya = data.data.url,
@@ -2938,7 +2938,7 @@ router.get('/textmaker/random', async (req, res, next) => {
                         $(".thumbnail").find("img").each(function() {
                             h = $(this).attr("src")
                             var result = "https://photooxy.com/"+h
-                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=761ea2d5575581057a799d14e9c78e28&image=${result}&name=${randomTextNumber}`))
+                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=6346fb5fe9b50aa3eb40e3c2f04ad3c9&image=${result}&name=${randomTextNumber}`))
                                 .then(response => response.json())
                                 .then(data => {
                                     var urlnya = data.data.url,
@@ -2974,7 +2974,7 @@ router.get('/textmaker/random', async (req, res, next) => {
                         $(".thumbnail").find("img").each(function() {
                             h = $(this).attr("src")
                             var result = "https://photooxy.com/"+h
-                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=761ea2d5575581057a799d14e9c78e28&image=${result}&name=${randomTextNumber}`))
+                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=6346fb5fe9b50aa3eb40e3c2f04ad3c9&image=${result}&name=${randomTextNumber}`))
                                 .then(response => response.json())
                                 .then(data => {
                                     var urlnya = data.data.url,
@@ -3025,7 +3025,7 @@ router.get('/textmaker/roses', async (req, res, next) => {
                         $(".thumbnail").find("img").each(function() {
                             h = $(this).attr("src")
                             var result = "https://photooxy.com/"+h
-                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=761ea2d5575581057a799d14e9c78e28&image=${result}&name=${randomTextNumber}`))
+                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=6346fb5fe9b50aa3eb40e3c2f04ad3c9&image=${result}&name=${randomTextNumber}`))
                                 .then(response => response.json())
                                 .then(data => {
                                     var urlnya = data.data.url,
@@ -3061,7 +3061,7 @@ router.get('/textmaker/roses', async (req, res, next) => {
                         $(".thumbnail").find("img").each(function() {
                             h = $(this).attr("src")
                             var result = "https://photooxy.com/"+h
-                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=761ea2d5575581057a799d14e9c78e28&image=${result}&name=${randomTextNumber}`))
+                            fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=6346fb5fe9b50aa3eb40e3c2f04ad3c9&image=${result}&name=${randomTextNumber}`))
                                 .then(response => response.json())
                                 .then(data => {
                                     var urlnya = data.data.url,
