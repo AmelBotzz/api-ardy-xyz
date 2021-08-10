@@ -899,6 +899,7 @@ router.get('/fbdown', async (req, res, next) => {
 })
 
 
+
 router.get('/textmaker/metallic', async (req, res, next) => {
         var theme = req.query.theme,
              text = req.query.text,
@@ -1728,6 +1729,48 @@ router.get('/holoh', async (req, res, next) => {
 })
 })
 
+router.get('/ytmp3', async (req, res, next) => {
+        var apikeyInput = req.query.apikey,
+            url = req.query.url
+            
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'freeapi') return res.json(loghandler.invalidKey)
+    if (!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter url"})
+
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/socialmedia/ytmp3?url=${url}&apikey=tvT241pY5rPDYQW`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+})
+
+router.get('/ytmp4', async (req, res, next) => {
+        var apikeyInput = req.query.apikey,
+            url = req.query.url
+            
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'freeapi') return res.json(loghandler.invalidKey)
+    if (!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter url"})
+
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/socialmedia/ytmp4?url=${url}&apikey=tvT241pY5rPDYQW`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+})
+
 router.get('/liriklagu', async (req, res, next) => {
         var apikeyInput = req.query.apikey,
             lagu = req.query.lagu
@@ -2380,7 +2423,7 @@ router.get('/filmapik/kategori', async (req, res, next) => {
 })
 
 
-router.get('/filmapik/play', async (req, res, next) => {
+router.get('/filmapik/', async (req, res, next) => {
         var apikeyInput = req.query.apikey,
             id = req.query.id
             
@@ -2388,7 +2431,7 @@ router.get('/filmapik/play', async (req, res, next) => {
 	if(apikeyInput != 'freeapi') return res.json(loghandler.invalidKey)
     if (!id) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter id"})
 
-       fetch(encodeURI(`https://filmapik-api-zahirr.herokuapp.com/play?id=${id}`))
+       fetch(encodeURI(`https://filmapik-api-zahirr.herokuapp.com/?id=${id}`))
         .then(response => response.json())
         .then(data => {
         var result = data;
@@ -2822,7 +2865,7 @@ router.get('/ig', async (req, res, next) => {
 
 })
 
-router.get('/playstore', async (req, res, next) => {
+router.get('/store', async (req, res, next) => {
         var apikeyInput = req.query.apikey,
             search = req.query.search
             
@@ -2830,7 +2873,7 @@ router.get('/playstore', async (req, res, next) => {
 	if(apikeyInput != 'freeapi') return res.json(loghandler.invalidKey)
     if (!search) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter search"})
 
-       fetch(encodeURI(`https://api-gplay.azharimm.tk/apps?q=${search}`))
+       fetch(encodeURI(`https://api-g.azharimm.tk/apps?q=${search}`))
         .then(response => response.json())
         .then(data => {
         var result = data;
