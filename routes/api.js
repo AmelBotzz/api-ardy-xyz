@@ -3083,50 +3083,6 @@ router.get('/textmaker/roses', async (req, res, next) => {
         }
 })
 
-router.get('/yutub/video', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
-            url = req.query.url
-            
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.json(loghandler.invalidKey)
-    if (!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter url"})
-
-       fetch(encodeURI(`https://python-api-zhirrr.herokuapp.com/api/ytv?url=${url}`))
-        .then(response => response.json())
-        .then(data => {
-        var result = data;
-             res.json({
-             	author: 'Hafidz Abdillah',
-                 result
-             })
-         })
-         .catch(e => {
-         	res.json(loghandler.error)
-})
-})
-
-
-router.get('/yutub/audio', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
-            url = req.query.url
-            
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.json(loghandler.invalidKey)
-    if (!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter url"})
-
-       fetch(encodeURI(`https://python-api-zhirrr.herokuapp.com/api/yta?url=${url}`))
-        .then(response => response.json())
-        .then(data => {
-        var result = data;
-             res.json({
-             	author: 'Hafidz Abdillah',
-                 result
-             })
-         })
-         .catch(e => {
-         	res.json(loghandler.error)
-})
-})
 
 
 router.get('/ig', async (req, res, next) => {
