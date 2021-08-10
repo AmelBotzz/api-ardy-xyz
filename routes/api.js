@@ -1433,6 +1433,47 @@ router.get('/wallpaper/pegunungan', async (req, res, next) => {
 })
 })
 
+router.get('/storeinfo', async (req, res, next) => {
+        var apikeyInput = req.query.apikey,
+            nama = req.query.nama
+            
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'freeapi') return res.json(loghandler.invalidKey)
+    if (!nama) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter nama"})
+
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/search/playstore-info?id=${nama}&apikey=tvT241pY5rPDYQW`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+})
+
+router.get('/serstik', async (req, res, next) => {
+        var apikeyInput = req.query.apikey,
+            nama = req.query.nama
+            
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'freeapi') return res.json(loghandler.invalidKey)
+    if (!nama) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter nama"})
+
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/search/searchsticker?query=${nama}&apikey=tvT241pY5rPDYQW`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+})
 
 router.get('/wikipedia', async (req, res, next) => {
         var apikeyInput = req.query.apikey,
