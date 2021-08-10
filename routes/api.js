@@ -107,13 +107,13 @@ loghandler = {
         creator: `${creator}`,
         code: 406,
         message: 'theme tidak tersedia silahkan masukkan texmaker/list atau baca documentasi'
-     },
-    invalidKey: {
-        status: false,
-        creator: `${creator}`,
-        code: 406,
-        message: 'Apikey Tidak Diketahui, Masukin Apikey Yang Valid Ngab!'
-    },
+  //  },
+   // invalidKey: {
+    //    status: false,
+     //   creator: `${creator}`,
+     //   code: 406,
+      //  message: 'Apikey Tidak Diketahui, Masukin Apikey Yang Valid Ngab!'
+   // },
     invalidlink: {
         status: false,
         creator: `${creator}`,
@@ -3448,7 +3448,7 @@ router.get('/yutub/search', async (req, res, next) => {
 })
 
 
-router.use(function (req, res, next) {
+router.use(invalidKeyreqeq, res, next) {
     res.status(404)
         .set("Content-Type", "text/html")
         .sendfile(dir + "/public/about.html");
