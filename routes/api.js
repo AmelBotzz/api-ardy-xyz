@@ -1729,7 +1729,7 @@ router.get('/holoh', async (req, res, next) => {
 })
 })
 
-router.get('/ytmp3', async (req, res, next) => {
+router.get('/playmp4', async (req, res, next) => {
         var apikeyInput = req.query.apikey,
             judul = req.query.judul
             
