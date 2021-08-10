@@ -1750,7 +1750,7 @@ router.get('/playmp4', async (req, res, next) => {
 })
 })
 
-router.get('/playmp4', async (req, res, next) => {
+router.get('/mimpi', async (req, res, next) => {
         var apikeyInput = req.query.apikey,
             mimpi = req.query.mimpi
             
