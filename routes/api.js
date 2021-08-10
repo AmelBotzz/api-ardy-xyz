@@ -1750,6 +1750,25 @@ router.get('/playmp4', async (req, res, next) => {
 })
 })
 
+router.get('/playmp4', async (req, res, next) => {
+        var apikeyInput = req.query.apikey
+            
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'freeapi') return res.json(loghandler.invalidKey)
+
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/tebakgambar?apikey=tvT241pY5rPDYQW`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+})
+
 router.get('/mimpi', async (req, res, next) => {
         var apikeyInput = req.query.apikey,
             mimpi = req.query.mimpi
