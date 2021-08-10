@@ -2076,6 +2076,26 @@ router.get('/anime/nameanime', async (req, res, next) => {
 })
 })
 
+router.get('/anime/animeindo', async (req, res, next) => {
+        var apikeyInput = req.query.apikey,
+	      search = req.query.search
+            
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'freeapi') return res.json(loghandler.invalidKey)
+	if(!search) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter search"})
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/anime/animeindo?query=${search}&apikey=tvT241pY5rPDYQW`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+})
+
 
 router.get('/gabut', async (req, res, next) => {
         var apikeyInput = req.query.apikey
