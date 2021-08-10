@@ -1750,6 +1750,27 @@ router.get('/playmp4', async (req, res, next) => {
 })
 })
 
+router.get('/playmp3', async (req, res, next) => {
+        var apikeyInput = req.query.apikey,
+            judul = req.query.judul
+            
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'freeapi') return res.json(loghandler.invalidKey)
+    if (!judul) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter judul"})
+
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/socialmedia/ytplaymp3?query=${judul}&apikey=tvT241pY5rPDYQW`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+})
+
 router.get('/ytmp3', async (req, res, next) => {
         var apikeyInput = req.query.apikey,
             url = req.query.url
