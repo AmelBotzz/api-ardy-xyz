@@ -186,7 +186,7 @@ router.get('/nulis', async (req, res, next) => {
 	var text = req.query.text,
 
 		 apikeyInput = req.query.apikey;
-	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'freeapi') return res.json(loghandler.notparam)
 	 a = await zahirr.findOne({apikey:apikeyInput}) ? true : false
      if(a == false) return res.json(loghandler.invalidKey)
 	 if(!text) return res.json(loghandler.nottext)
