@@ -297,7 +297,7 @@ router.get('/tiktod', async (req, res, next) => {
 
 
 	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(listkey.includes(apikeyInput)) return res.json(loghandler.invalidKey)
+	if(apikeyInput.includes(listkey)) return res.json(loghandler.invalidKey)
      if (!url) return res.json(loghandler.noturl)
 
      TikTokScraper.getVideoMeta(url, options)
