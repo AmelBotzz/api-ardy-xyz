@@ -58,7 +58,7 @@ loghandler = {
         status: false,
         creator: `${creator}`,
         code: 406,
-        message: 'Akses Apikey Tidak Di Izin Kan!'
+        message: 'Akses Apikey Tidak Di Izin Kan'
     },
     notkata: {
         status: false,
