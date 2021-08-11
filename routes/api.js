@@ -931,34 +931,21 @@ router.get('/base', async (req, res, next) => {
 			}
 })
 
-router.get('/nulis', async (req, res, next) => {
-	var text = req.query.text,
-		 apikeyInput = req.query.apikey;
-	if(!apikeyInput) return res.json(loghandler.notparam)
-     if(apikeyInput != 'freeapi') return res.json(loghandler.invalidKey)
-	 if(!text) return res.json(loghandler.nottext)
-		Nulis(text)
-		 .then(hasil => {
-			fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=6346fb5fe9b50aa3eb40e3c2f04ad3c9&image=${hasil}&name=${randomTextNumber}`))
-                                .then(response => response.json())
-                                .then(data => {
-                                    var urlnya = data.data.url,
-                                        delete_url = data.data.delete_url;
-                                        res.json({
-                                            status : true,
-                                            creator : `${creator}`,
-                                            message : `jangan lupa follow ${creator}`,
-                                            result:{
-                                                url:urlnya,
-                                                delete_url: delete_url,
-                                                info: 'url akan hilang setelah 2 menit'
-                                            }
-                                        })
-                                })
-            })
-           .catch(err => {
-		  res.json(loghandler.error)
-		   })
+router.get('/nulis', async(req, res, next) => {
+
+  const text = req.query.text;
+  const apikey = req.query.apikey;
+  if(!text) return res.json(loghandler.nottext)
+  if(!apikey) return res.json(loghandler.notparam)
+  
+  if(listkey.includes(apikey)) {
+  let hasil = 'https://dapuhy-api.herokuapp.com/api/maker/nulis?text='+ text +'&apikey=tvT241pY5rPDYQW'
+  data = await fetch(hasil).then(v => v.buffer())
+  await fs.writeFileSync(__path +'/tmp/nulis.jpg', data)
+  res.sendFile(__path +'/tmp/nulis.jpg')
+  } else {
+    res.json(loghandler.invalidKey)
+  }
 })
 
 router.get('/textmaker', async (req, res, next) => {
