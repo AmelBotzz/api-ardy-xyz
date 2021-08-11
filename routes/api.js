@@ -179,7 +179,6 @@ router.get('/find', async (req, res, next) => {
     }
 })
 
-const listkey = ["IntinyaEkaGans", "manogay"];
 
 
 router.get('/cekapikey', async (req, res, next) => {
