@@ -109,12 +109,13 @@ loghandler = {
         code: 406,
         message: 'theme tidak tersedia silahkan masukkan texmaker/list atau baca documentasi'
      },
-    router.use(function (req, res) {
+    router.use(invalidKey (req, res) {
   
    res.status(404)
     .set("Content-Type", "text/html")
     .sendFile(__path + '/views/404.html');
     }});,
+    
     invalidlink: {
         status: false,
         creator: `${creator}`,
