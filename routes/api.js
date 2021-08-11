@@ -180,6 +180,26 @@ router.get('/find', async (req, res, next) => {
     }
 })
 
+router.get('/resep', async (req, res, next) => {
+        var apikeyInput = req.query.apikey,
+            makanan = req.query.makanan
+            
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'freeapi') return res.json(loghandler.invalidKey)
+    if (!makanan) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter makanan"})
+
+       fetch(encodeURI(`https://masak-apa-tomorisakura.vercel.app/api/search/?q={makanan}`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+})
 
 
 router.get('/cekapikey', async (req, res, next) => {
