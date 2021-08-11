@@ -191,8 +191,6 @@ router.get('/dataindo', async (req, res, next) => {
         .then(data => {
         var result = data;
              res.json({
-                 status: true,
-                 creator: `${creator}`,
                  result
              })
          })
