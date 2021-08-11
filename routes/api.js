@@ -181,38 +181,6 @@ router.get('/find', async (req, res, next) => {
 
 const listkey = ["IntinyaEkaGans", "manogay"];
 
-router.get('/nulis', async (req, res, next) => {
-
-	var text = req.query.text,
-
-		 apikeyInput = req.query.apikey;
-	if(apikeyInput != 'freeapi') return res.json(loghandler.notparam)
-	 a = await zahirr.findOne({apikey:apikeyInput}) ? true : false
-     if(a == false) return res.json(loghandler.invalidKey)
-	 if(!text) return res.json(loghandler.nottext)
-		Nulis(text)
-		 .then(hasil => {
-			fetch(encodeURI(`https://api.imgbb.com/1/upload?expiration=120&key=6346fb5fe9b50aa3eb40e3c2f04ad3c9&image=${hasil}&name=${randomTextNumber}`))
-                                .then(response => response.json())
-                                .then(data => {
-                                    var urlnya = data.data.url,
-                                        delete_url = data.data.delete_url;
-                                        res.json({
-                                            status : true,
-                                            creator : `${creator}`,
-                                            message : `jangan lupa follow ${creator}`,
-                                            result:{
-                                                url:urlnya,
-                                                delete_url: delete_url,
-                                                info: 'url akan hilang setelah 2 menit'
-                                            }
-                                        })
-                                })
-            })
-           .catch(err => {
-		  res.json(loghandler.error)
-		   })
-})
 
 router.get('/cekapikey', async (req, res, next) => {
 	var apikeyInput = req.query.apikey
