@@ -180,6 +180,26 @@ router.get('/find', async (req, res, next) => {
     }
 })
 
+router.get('/waktu', async (req, res, next) => {
+        var apikeyInput = req.query.apikey,
+            
+            
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'freeapi') return res.json(loghandler.invalidKey)
+
+       fetch(encodeURI(`https://time.is/id/Semarang`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+})
+
 router.get('/cekapikey', async (req, res, next) => {
 	var apikeyInput = req.query.apikey
 	if(!apikeyInput) return res.json(loghandler.notparam)
