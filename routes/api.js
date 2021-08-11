@@ -180,6 +180,27 @@ router.get('/find', async (req, res, next) => {
     }
 })
 
+router.get('/dataindo', async (req, res, next) => {
+        var apikeyInput = req.query.apikey,
+            
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'freeapi') return res.json(loghandler.invalidKey)
+
+       fetch(encodeURI(`https://dev.farizdotid.com/api/daerahindonesia/provinsi`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+                 status: true,
+                 creator: `${creator}`,
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+})
+
 router.get('/resep', async (req, res, next) => {
         var apikeyInput = req.query.apikey,
             makanan = req.query.makanan
