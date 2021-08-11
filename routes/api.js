@@ -57,8 +57,8 @@ loghandler = {
     invalidKey: {
         status: false,
         creator: `${creator}`,
-        code: 404,
-        message: `Apikey ${apikey}  Know, Please Contact Creator To Get Apikey Access `
+        code: 406,
+        message: 'Akses Apikey Tidak Di Izin Kan!'
     },
     notkata: {
         status: false,
