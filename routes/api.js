@@ -54,6 +54,12 @@ loghandler = {
         code: 406,
         message: 'masukan parameter url'
     },
+    invalidKey: {
+        status: false,
+        creator: `${creator}`,
+        code: 404,
+        message: `Apikey ${apikey}  Know, Please Contact Creator To Get Apikey Access `
+    },
     notkata: {
         status: false,
         creator: `${creator}`,
@@ -107,13 +113,7 @@ loghandler = {
         creator: `${creator}`,
         code: 406,
         message: 'theme tidak tersedia silahkan masukkan texmaker/list atau baca documentasi'
-  //  },
-   // invalidKey: {
-    //    status: false,
-     //   creator: `${creator}`,
-     //   code: 406,
-      //  message: 'Apikey Tidak Diketahui, Masukin Apikey Yang Valid Ngab!'
-   // },
+        
     invalidlink: {
         status: false,
         creator: `${creator}`,
@@ -3446,13 +3446,6 @@ router.get('/yutub/search', async (req, res, next) => {
          	res.json(loghandler.error)
 })
 })
-
-
-router.use(invalidKey (req, res, next) {
-    res.status(404)
-        .set("Content-Type", "text/html")
-        .sendfile(dir + "/viesw/about.html");
-});
 
 
 module.exports = router
