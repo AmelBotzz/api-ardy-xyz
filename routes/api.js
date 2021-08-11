@@ -188,7 +188,7 @@ router.get('/resep', async (req, res, next) => {
 	if(apikeyInput != 'freeapi') return res.json(loghandler.invalidKey)
     if (!makanan) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter makanan"})
 
-       fetch(encodeURI(`https://masak-apa-tomorisakura.vercel.app/api/search/?q={makanan}`))
+       fetch(encodeURI(`https://masak-apa-tomorisakura.vercel.app/api/search/?q=${makanan}`))
         .then(response => response.json())
         .then(data => {
         var result = data;
