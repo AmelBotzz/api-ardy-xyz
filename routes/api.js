@@ -41,7 +41,7 @@ loghandler = {
         creator: `${creator}`,
         code: 406,
         message: 'masukan parameter apikey',
-        getApikey: 'Akses Apikey Tidak Di izin Kan!!'
+        getApikey: 'Akses Apikey Tidak Di izin Kan'
     },
     notkey: {
         status: false,
@@ -112,9 +112,8 @@ loghandler = {
     invalidKey: {
         status: false,
         creator: `${creator}`,
-        message: Apikey Invalid,
         code: 406,
-        message: 'Akses Apikey Tidak Di izin Kan!'
+        message: 'Akses Apikey Tidak Di izin Kan'
     },
     invalidlink: {
         status: false,
