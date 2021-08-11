@@ -3187,4 +3187,11 @@ router.get('/textmaker/roses', async (req, res, next) => {
         }
 })
 
+router.use(function (req, res) {
+  
+   res.status(404)
+    .set("Content-Type", "text/html")
+    .sendFile(__path + '/views/404.html');
+});
+
 module.exports = router
