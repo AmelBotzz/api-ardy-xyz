@@ -201,7 +201,7 @@ router.get('/cekapikey', async (req, res, next) => {
 				exp:a.exp,
 			},
 		},
-		message: `jangan lupa follow ${creator}`
+		message: `Jangan Lupa Follow Ig Gue Yo @hafidzabdillh_`
 	})
 } else {
 	json = JSON.stringify({
@@ -842,7 +842,7 @@ router.get('/infonpm', async (req, res, next) => {
                  status : true,
                  creator : `${creator}`,
                  result,
-                 message : `jangan lupa follow ${creator}`
+                 message : `Jangan Lupa Follow Ig Gue Yo @hafidzabdillh_`
              })
          })
          .catch(e => {
@@ -887,7 +887,7 @@ router.get('/tiny', async (req, res, next) => {
                  result : {
                      link : `${body}`,
                  },
-                 message : `jangan lupa follow ${creator}`
+                 message : `Jangan Lupa Follow Ig Gue Yo @hafidzabdillh_`
              })
          } catch (e) {
              console.log('Error :', color(e,'red'))
@@ -1004,7 +1004,7 @@ router.get('/textmaker', async (req, res, next) => {
                                         res.json({
                                             status : true,
                                             creator : `${creator}`,
-                                            message : `jangan lupa follow ${creator}`,
+                                            message : `Jangan Lupa Follow Ig Gue Yo @hafidzabdillh_`,
                                             result:{
                                                 url:urlnya,
                                                 delete_url: delete_url,
@@ -1042,7 +1042,7 @@ router.get('/textmaker', async (req, res, next) => {
                                         res.json({
                                             status : true,
                                             creator : `${creator}`,
-                                            message : `jangan lupa follow ${creator}`,
+                                            message : `Jangan Lupa Follow Ig Gue Yo @hafidzabdillh_`,
                                             result:{
                                                 url:urlnya,
                                                 delete_url: delete_url,
@@ -1094,7 +1094,7 @@ router.get('/textmaker/game', async (req, res, next) => {
                                         res.json({
                                             status : true,
                                             creator : `${creator}`,
-                                            message : `jangan lupa follow ${creator}`,
+                                            message : `Jangan Lupa Follow Ig Gue Yo @hafidzabdillh_`,
                                             result:{
                                                 url:urlnya,
                                                 delete_url: delete_url,
@@ -1131,7 +1131,7 @@ router.get('/textmaker/game', async (req, res, next) => {
                                         res.json({
                                             status : true,
                                             creator : `${creator}`,
-                                            message : `jangan lupa follow ${creator}`,
+                                            message : `Jangan Lupa Follow Ig Gue Yo @hafidzabdillh_`,
                                             result:{
                                                 url:urlnya,
                                                 delete_url: delete_url,
@@ -1182,7 +1182,7 @@ router.get('/textmaker/senja', async (req, res, next) => {
                                         res.json({
                                             status : true,
                                             creator : `${creator}`,
-                                            message : `jangan lupa follow ${creator}`,
+                                            message : `Jangan Lupa Follow Ig Gue Yo @hafidzabdillh_`,
                                             result:{
                                                 url:urlnya,
                                                 delete_url: delete_url,
@@ -1218,7 +1218,7 @@ router.get('/textmaker/senja', async (req, res, next) => {
                                         res.json({
                                             status : true,
                                             creator : `${creator}`,
-                                            message : `jangan lupa follow ${creator}`,
+                                            message : `Jangan Lupa Follow Ig Gue Yo @hafidzabdillh_`,
                                             result:{
                                                 url:urlnya,
                                                 delete_url: delete_url,
@@ -1376,7 +1376,7 @@ router.get('/textmaker/metallic', async (req, res, next) => {
                                         res.json({
                                             status : true,
                                             creator : `${creator}`,
-                                            message : `jangan lupa follow ${creator}`,
+                                            message : `Jangan Lupa Follow Ig Gue Yo @hafidzabdillh_`,
                                             result:{
                                                 url:urlnya,
                                                 delete_url: delete_url,
@@ -1412,7 +1412,7 @@ router.get('/textmaker/metallic', async (req, res, next) => {
                                         res.json({
                                             status : true,
                                             creator : `${creator}`,
-                                            message : `jangan lupa follow ${creator}`,
+                                            message : `Jangan Lupa Follow Ig Gue Yo @hafidzabdillh_`,
                                             result:{
                                                 url:urlnya,
                                                 delete_url: delete_url,
@@ -1463,7 +1463,7 @@ router.get('/textmaker/alam', async (req, res, next) => {
                                         res.json({
                                             status : true,
                                             creator : `${creator}`,
-                                            message : `jangan lupa follow ${creator}`,
+                                            message : `Jangan Lupa Follow Ig Gue Yo @hafidzabdillh_`,
                                             result:{
                                                 url:urlnya,
                                                 delete_url: delete_url,
@@ -1499,7 +1499,7 @@ router.get('/textmaker/alam', async (req, res, next) => {
                                         res.json({
                                             status : true,
                                             creator : `${creator}`,
-                                            message : `jangan lupa follow ${creator}`,
+                                            message : `Jangan Lupa Follow Ig Gue Yo @hafidzabdillh_`,
                                             result:{
                                                 url:urlnya,
                                                 delete_url: delete_url,
@@ -3068,7 +3068,7 @@ router.get('/textmaker/random', async (req, res, next) => {
                                         res.json({
                                             status : true,
                                             creator : `${creator}`,
-                                            message : `jangan lupa follow ${creator}`,
+                                            message : `Jangan Lupa Follow Ig Gue Yo @hafidzabdillh_`,
                                             result:{
                                                 url:urlnya,
                                                 delete_url: delete_url,
@@ -3104,7 +3104,7 @@ router.get('/textmaker/random', async (req, res, next) => {
                                         res.json({
                                             status : true,
                                             creator : `${creator}`,
-                                            message : `jangan lupa follow ${creator}`,
+                                            message : `Jangan Lupa Follow Ig Gue Yo @hafidzabdillh_`,
                                             result:{
                                                 url:urlnya,
                                                 delete_url: delete_url,
@@ -3155,7 +3155,7 @@ router.get('/textmaker/roses', async (req, res, next) => {
                                         res.json({
                                             status : true,
                                             creator : `${creator}`,
-                                            message : `jangan lupa follow ${creator}`,
+                                            message : `Jangan Lupa Follow Ig Gue Yo @hafidzabdillh_`,
                                             result:{
                                                 url:urlnya,
                                                 delete_url: delete_url,
@@ -3191,7 +3191,7 @@ router.get('/textmaker/roses', async (req, res, next) => {
                                         res.json({
                                             status : true,
                                             creator : `${creator}`,
-                                            message : `jangan lupa follow ${creator}`,
+                                            message : `Jangan Lupa Follow Ig Gue Yo @hafidzabdillh_`,
                                             result:{
                                                 url:urlnya,
                                                 delete_url: delete_url,
