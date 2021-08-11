@@ -487,6 +487,133 @@ router.get('/tiktod/stalk', async (req, res, next) => {
          })
 })
 
+router.get('/lucu', async (req, res, next) => {
+        var apikeyInput = req.query.apikey
+            
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'freeapi') return res.json(loghandler.invalidKey)
+
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/quoteslucu?apikey=tvT241pY5rPDYQW`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+                 author: 'Hafidz Abdillah',
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+})
+
+router.get('/nama', async (req, res, next) => {
+        var apikeyInput = req.query.apikey,
+            nama = req.query.nama
+            
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'freeapi') return res.json(loghandler.invalidKey)
+    if (!nama) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter nama"})
+
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/artinama?nama=${nama}&apikey=tvT241pY5rPDYQW`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+})
+
+router.get('/nomorhoki', async (req, res, next) => {
+        var apikeyInput = req.query.apikey,
+            nomor = req.query.nomor
+            
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'freeapi') return res.json(loghandler.invalidKey)
+    if (!nomor) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter nomor"})
+
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/nomorhoki?nomer=${nomor}&apikey=tvT241pY5rPDYQW`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+               author : 'Hafidz Abdillah',
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+})
+
+router.get('/mimpi', async (req, res, next) => {
+        var apikeyInput = req.query.apikey,
+            mimpi = req.query.mimpi
+            
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'freeapi') return res.json(loghandler.invalidKey)
+    if (!mimpi) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter mimpi"})
+
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/artimimpi?mimpi=${mimpi}&apikey=tvT241pY5rPDYQW`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+})
+
+router.get('/ramal', async (req, res, next) => {
+        var apikeyInput = req.query.apikey,
+            pasangan1 = req.query.pasangan1,
+            pasangan2 = req.query.pasangan2
+            
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'freeapi') return res.json(loghandler.invalidKey)
+    if (!pasangan1) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter pasangan 1"})
+    if (!pasangan2) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter pasangan 2"})
+
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/ramaljodoh?nama1=${pasangan1}&nama2=${pasangan2}&apikey=tvT241pY5rPDYQW`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+})
+
+router.get('/cerpen', async (req, res, next) => {
+        var apikeyInput = req.query.apikey
+            
+	if(!apikeyInput) return res.json(loghandler.notparam)
+	if(apikeyInput != 'freeapi') return res.json(loghandler.invalidKey)
+
+       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/fun/cerpen?apikey=tvT241pY5rPDYQW`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+                 author: 'Hafidz Abdillah',
+                 result
+             })
+         })
+         .catch(e => {
+         	res.json(loghandler.error)
+})
+})
+
 router.get('/randomquote', async (req, res, next) => {
         var apikeyInput = req.query.apikey
             
