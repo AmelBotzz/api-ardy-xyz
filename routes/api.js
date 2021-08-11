@@ -289,6 +289,8 @@ router.get('/remove', (req, res, next) => {
     }
 })
 
+const listkey = ["sayahafiz", "danugans"];
+
 router.get('/tiktod', async (req, res, next) => {
     var apikeyInput = req.query.apikey,
         url = req.query.url
