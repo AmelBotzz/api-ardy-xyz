@@ -488,27 +488,6 @@ router.get('/base', async (req, res, next) => {
 			}
 })
 
-router.get('/p', async (req, res, next) => {
-	var apikeyInput = req.query.apikey,
-            text = req.query.text
-            
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.json(loghandler.invalidKey)
-    if (!text) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter text"})
-
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/maker/nulis?text=${text}&apikey=tvT241pY5rPDYQW`))
-        .then(response => response.json())
-        .then(data => {
-        var result = data;
-             res.json({
-                 result
-             })
-         })
-         .catch(e => {
-         	res.json(loghandler.error)
-})
-})
-
 router.get('/textmaker', async (req, res, next) => {
         var theme = req.query.theme,
              text = req.query.text,
