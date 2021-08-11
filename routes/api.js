@@ -3335,27 +3335,6 @@ router.get('/maker3d/no4', async (req, res, next) => {
 })
 })
 
-router.get('/mediafire', async (req, res, next) => {
-        var apikeyInput = req.query.apikey,
-            url = req.query.url
-            
-	if(!apikeyInput) return res.json(loghandler.notparam)
-	if(apikeyInput != 'freeapi') return res.json(loghandler.invalidKey)
-    if (!url) return res.json({ status : false, creator : `${creator}`, message : "masukan parameter url"})
-
-       fetch(encodeURI(`https://dapuhy-api.herokuapp.com/api/socialmedia/mediafire?url=${url}&apikey=tvT241pY5rPDYQW`))
-        .then(response => response.json())
-        .then(data => {
-        var result = data;
-             res.json({
-                 result
-             })
-         })
-         .catch(e => {
-         	res.json(loghandler.error)
-})
-})
-
 router.get('/yutub/search', async (req, res, next) => {
         var apikeyInput = req.query.apikey,
             video = req.query.video
