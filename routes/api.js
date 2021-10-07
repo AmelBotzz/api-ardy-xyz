@@ -21,6 +21,8 @@ var fetch = require('node-fetch');
 var cheerio = require('cheerio');
 var request = require('request');
 var TikTokScraper = require('tiktok-scraper');
+var dotenv = require('dotenv').config();
+var sID = process.env.sID;
 var router  = express.Router();
 
 var { color, bgcolor } = require(__path + '/lib/color.js');
